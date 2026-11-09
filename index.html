@@ -23,7 +23,7 @@
 <main>
   <header>
     <h1>BozorUp: политика конфиденциальности</h1>
-    <p>Действует с 10 ноября 2026 г. · обновлено: камера для штрихкодов</p>
+    <p>Действует с 10 ноября 2026 г. · обновлено: шифрование базы и копий</p>
   </header>
 
   <section>
@@ -42,7 +42,8 @@
       <li>адрес и телефон для доставки, если вы их указали;</li>
       <li>PIN-код для входа — хранится не сам код, а его зашифрованный отпечаток.</li>
     </ul>
-    <p>Всё это лежит в базе данных внутри приложения на вашем устройстве. У нас нет сервера,
+    <p>Всё это лежит в зашифрованной базе данных внутри приложения на вашем устройстве; ключ шифрования
+    хранится в защищённом хранилище Android. У нас нет сервера,
     куда бы эти данные отправлялись. Приложение не запрашивает доступ к интернету, контактам,
     местоположению или файлам телефона.</p>
   </section>
@@ -57,8 +58,10 @@
 
   <section>
     <h2>Резервная копия</h2>
-    <p>Копию базы вы делаете сами в «Профиль → Резервная копия» и сами выбираете, куда её
-    отправить (Telegram, Google Диск, почта и т. п.). С этого момента файл хранится по правилам
+    <p>Копию базы вы делаете сами в «Профиль → Резервная копия». Она защищена паролем, который
+    задаёте вы (шифрование AES-256): без пароля файл не откроет никто, в том числе мы. Пароль нигде
+    не сохраняется — если его забыть, копию восстановить нельзя. Куда её
+    отправить, выбираете вы (Telegram, Google Диск, почта и т. п.). С этого момента файл хранится по правилам
     выбранного вами сервиса. Восстановление из копии тоже происходит только по вашему действию.</p>
   </section>
 
@@ -92,7 +95,8 @@
     <h2>Privacy Policy (English summary)</h2>
     <p>BozorUp is an offline bookkeeping app for market sellers. All data you enter (products, sales,
     expenses, names and phone numbers of your customers and suppliers, delivery addresses, a hashed PIN)
-    is stored only on your device. The app has no servers, no accounts, no ads and no analytics, and it
+    is stored only on your device in an encrypted database. Backups are protected with a password you set
+    (AES-256). The app has no servers, no accounts, no ads and no analytics, and it
     does not request internet access. The camera is used only to scan product barcodes when you tap
     «Scan»; recognition happens on the device, images are neither stored nor sent, only the barcode number
     is kept. We do not collect, receive or share any
