@@ -23,14 +23,15 @@
 <main>
   <header>
     <h1>BozorUp: политика конфиденциальности</h1>
-    <p>Действует с 10 ноября 2026 г. · обновлено: шифрование базы и копий</p>
+    <p>Действует с 10 ноября 2026 г. · обновлено: аккаунт продавца</p>
   </header>
 
   <section>
     <h2>Коротко</h2>
     <p>BozorUp — приложение для учёта товаров, продаж, расходов и долгов продавца. Оно работает
-    без интернета: все данные хранятся только на вашем телефоне. Мы не собираем, не получаем
-    и не передаём никому ваши данные. В приложении нет рекламы, аналитики и регистрации.</p>
+    без интернета: товары, продажи, расходы, долги, клиенты и поставщики хранятся только на вашем
+    телефоне и никуда не отправляются. На наш сервер уходят лишь данные аккаунта: имя, телефон,
+    название точки, версия приложения и дата захода. Рекламы и аналитики в приложении нет.</p>
   </section>
 
   <section>
@@ -43,9 +44,21 @@
       <li>PIN-код для входа — хранится не сам код, а его зашифрованный отпечаток.</li>
     </ul>
     <p>Всё это лежит в зашифрованной базе данных внутри приложения на вашем устройстве; ключ шифрования
-    хранится в защищённом хранилище Android. У нас нет сервера,
-    куда бы эти данные отправлялись. Приложение не запрашивает доступ к интернету, контактам,
-    местоположению или файлам телефона.</p>
+    хранится в защищённом хранилище Android. Эти данные не отправляются ни на наш сервер, ни куда-либо
+    ещё. Приложение не запрашивает доступ к контактам, местоположению или файлам телефона.</p>
+  </section>
+
+  <section>
+    <h2>Аккаунт продавца</h2>
+    <p>При первом запуске вы указываете своё имя, телефон и название точки. Когда есть интернет
+    (примерно раз в день и при запуске), приложение отправляет их вместе с версией приложения и датой
+    захода на сервер владельца приложения (Google Firebase, хранилище Firestore) и получает оттуда статус
+    подписки (оплачено до какой даты, заблокировано ли) и сообщения от владельца. Для этого приложение
+    входит на сервер анонимно, без пароля и без Google-аккаунта.</p>
+    <p>Эти данные видит только владелец приложения: они нужны, чтобы вести подписку, связаться с вами
+    и знать, какой версией вы пользуетесь. Мы никому их не продаём и не передаём, кроме Google как
+    поставщика серверов. Без интернета приложение работает как обычно. Удалить аккаунт и эти данные
+    с сервера можно по просьбе на почту ниже.</p>
   </section>
 
   <section>
@@ -96,11 +109,13 @@
     <p>BozorUp is an offline bookkeeping app for market sellers. All data you enter (products, sales,
     expenses, names and phone numbers of your customers and suppliers, delivery addresses, a hashed PIN)
     is stored only on your device in an encrypted database. Backups are protected with a password you set
-    (AES-256). The app has no servers, no accounts, no ads and no analytics, and it
-    does not request internet access. The camera is used only to scan product barcodes when you tap
+    (AES-256). None of this business data ever leaves the device. The only data sent to our server
+    (Google Firebase / Firestore) is the seller account: your name, phone number, shop name, app version and
+    the date you last opened the app; in return the app receives your subscription status and messages from
+    the app owner. This is visible only to the app owner, is not sold or shared, and can be deleted on request.
+    The app has no ads and no analytics. The camera is used only to scan product barcodes when you tap
     «Scan»; recognition happens on the device, images are neither stored nor sent, only the barcode number
-    is kept. We do not collect, receive or share any
-    personal data. Backups are created and shared only by you, to a destination you choose. You can
+    is kept. Backups are created and shared only by you, to a destination you choose. You can
     delete data inside the app or by uninstalling it. Contact: <a href="mailto:mahmudov.sorbon96@gmail.com">mahmudov.sorbon96@gmail.com</a>.</p>
   </section>
   <p class="muted">BozorUp · Душанбе, Таджикистан</p>
