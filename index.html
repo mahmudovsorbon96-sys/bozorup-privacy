@@ -23,7 +23,7 @@
 <main>
   <header>
     <h1>BozorUp: политика конфиденциальности</h1>
-    <p>Действует с 10 ноября 2026 г. · обновлено: аккаунт продавца</p>
+    <p>Действует с 13 ноября 2026 г. · обновлено: фото товаров, уведомления, чеки и напоминания</p>
   </header>
 
   <section>
@@ -38,6 +38,7 @@
     <h2>Какие данные вы вносите</h2>
     <ul>
       <li>товары, цены, остатки, приходы, списания;</li>
+      <li>фотографии товаров, если вы их добавили (хранятся только на телефоне);</li>
       <li>продажи, возвраты, способы оплаты, расходы;</li>
       <li>имена и телефоны клиентов и поставщиков, которых вы добавили сами, и их долги;</li>
       <li>адрес и телефон для доставки, если вы их указали;</li>
@@ -45,7 +46,8 @@
     </ul>
     <p>Всё это лежит в зашифрованной базе данных внутри приложения на вашем устройстве; ключ шифрования
     хранится в защищённом хранилище Android. Эти данные не отправляются ни на наш сервер, ни куда-либо
-    ещё. Приложение не запрашивает доступ к контактам, местоположению или файлам телефона.</p>
+    ещё. Приложение не запрашивает доступ к контактам и местоположению; фото из галереи вы выбираете
+    сами через системное окно Android, остальные файлы телефона приложению недоступны.</p>
   </section>
 
   <section>
@@ -53,8 +55,10 @@
     <p>При первом запуске вы указываете своё имя, телефон и название точки. Когда есть интернет
     (примерно раз в день и при запуске), приложение отправляет их вместе с версией приложения и датой
     захода на сервер владельца приложения (Google Firebase, хранилище Firestore) и получает оттуда статус
-    подписки (оплачено до какой даты, заблокировано ли) и сообщения от владельца. Для этого приложение
-    входит на сервер анонимно, без пароля и без Google-аккаунта.</p>
+    подписки (оплачено до какой даты, заблокировано ли, тариф и вид магазина) и сообщения от владельца.
+    Продавца заводит владелец приложения, а вы входите по одноразовому коду, который он вам выдал.
+    Для этого приложение входит на сервер анонимно, без пароля и без Google-аккаунта; Google присваивает
+    телефону случайный идентификатор, по которому сервер узнаёт ваш аккаунт.</p>
     <p>Эти данные видит только владелец приложения: они нужны, чтобы вести подписку, связаться с вами
     и знать, какой версией вы пользуетесь. Мы никому их не продаём и не передаём, кроме Google как
     поставщика серверов. Без интернета приложение работает как обычно. Удалить аккаунт и эти данные
@@ -62,16 +66,30 @@
   </section>
 
   <section>
-    <h2>Камера</h2>
-    <p>Камера нужна только для сканирования штрихкодов товаров и включается, когда вы сами нажимаете
-    «Сканировать». Распознавание идёт прямо на телефоне. Снимки не сохраняются и никуда не
-    отправляются; в приложении остаётся только номер штрихкода. Доступ к камере можно запретить
-    в настройках телефона — всё остальное продолжит работать.</p>
+    <h2>Камера и фото</h2>
+    <p>Камера включается, только когда вы сами нажимаете «Сканировать» или «Сфотографировать товар».
+    Для штрихкодов распознавание идёт прямо на телефоне, снимки не сохраняются и никуда не
+    отправляются; остаётся только номер штрихкода. Фото товара вы делаете или выбираете сами: оно
+    сжимается и хранится в папке приложения на телефоне, на сервер не отправляется. Доступ к камере
+    можно запретить в настройках телефона — всё остальное продолжит работать.</p>
+  </section>
+
+  <section>
+    <h2>Уведомления</h2>
+    <p>Приложение может показывать уведомления о сообщениях от владельца (например, о продлении
+    подписки). Это обычные уведомления Android; их можно отключить в настройках телефона.</p>
+  </section>
+
+  <section>
+    <h2>Чеки и напоминания клиентам</h2>
+    <p>Если вы отправляете клиенту чек (картинка без закупочных цен и прибыли) или напоминание о долге,
+    приложение только открывает WhatsApp, СМС или окно «Поделиться» с готовым текстом. Отправляете
+    вы сами, выбрав приложение и получателя; мы эти сообщения не видим и не храним.</p>
   </section>
 
   <section>
     <h2>Резервная копия</h2>
-    <p>Копию базы вы делаете сами в «Профиль → Резервная копия». Она защищена паролем, который
+    <p>Копию базы (вместе с фото товаров) вы делаете сами в «Профиль → Резервная копия». Она защищена паролем, который
     задаёте вы (шифрование AES-256): без пароля файл не откроет никто, в том числе мы. Пароль нигде
     не сохраняется — если его забыть, копию восстановить нельзя. Куда её
     отправить, выбираете вы (Telegram, Google Диск, почта и т. п.). С этого момента файл хранится по правилам
@@ -111,12 +129,15 @@
     is stored only on your device in an encrypted database. Backups are protected with a password you set
     (AES-256). None of this business data ever leaves the device. The only data sent to our server
     (Google Firebase / Firestore) is the seller account: your name, phone number, shop name, app version and
-    the date you last opened the app; in return the app receives your subscription status and messages from
-    the app owner. This is visible only to the app owner, is not sold or shared, and can be deleted on request.
-    The app has no ads and no analytics. The camera is used only to scan product barcodes when you tap
-    «Scan»; recognition happens on the device, images are neither stored nor sent, only the barcode number
-    is kept. Backups are created and shared only by you, to a destination you choose. You can
-    delete data inside the app or by uninstalling it. Contact: <a href="mailto:mahmudov.sorbon96@gmail.com">mahmudov.sorbon96@gmail.com</a>.</p>
+    the date you last opened the app, plus a random anonymous identifier assigned by Firebase; in return the app
+    receives your subscription status, plan and messages from the app owner, who creates seller accounts and
+    gives you a one-time sign-in code. This is visible only to the app owner, is not sold or shared, and can be
+    deleted on request. The app has no ads and no analytics. The camera is used only when you tap «Scan» or
+    take a product photo: barcode recognition happens on the device and only the barcode number is kept; product
+    photos are resized and stored only on your device (and in your own password-protected backup). The app may
+    show Android notifications for messages from the owner. Receipts and debt reminders are only handed to
+    WhatsApp, SMS or the system share sheet; you send them yourself. Backups are created and shared only by you,
+    to a destination you choose. You can delete data inside the app or by uninstalling it. Contact: <a href="mailto:mahmudov.sorbon96@gmail.com">mahmudov.sorbon96@gmail.com</a>.</p>
   </section>
   <p class="muted">BozorUp · Душанбе, Таджикистан</p>
 </main>
