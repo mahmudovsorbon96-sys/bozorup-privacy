@@ -23,7 +23,7 @@
 <main>
   <header>
     <h1>BozorUp: политика конфиденциальности</h1>
-    <p>Действует с 13 ноября 2026 г. · обновлено: фото товаров, уведомления, чеки и напоминания</p>
+    <p>Действует с 13 ноября 2026 г. · обновлено: магазины с сотрудниками (хранение на сервере)</p>
   </header>
 
   <section>
@@ -31,7 +31,9 @@
     <p>BozorUp — приложение для учёта товаров, продаж, расходов и долгов продавца. Оно работает
     без интернета: товары, продажи, расходы, долги, клиенты и поставщики хранятся только на вашем
     телефоне и никуда не отправляются. На наш сервер уходят лишь данные аккаунта: имя, телефон,
-    название точки, версия приложения и дата захода. Рекламы и аналитики в приложении нет.</p>
+    название точки, версия приложения и дата захода. <b>Исключение — магазины, в которых владелец включил
+    работу с сотрудниками:</b> их данные дополнительно хранятся в зашифрованном канале на защищённом сервере
+    (подробнее ниже). Рекламы и аналитики в приложении нет.</p>
   </section>
 
   <section>
@@ -46,7 +48,7 @@
     </ul>
     <p>Всё это лежит в зашифрованной базе данных внутри приложения на вашем устройстве; ключ шифрования
     хранится в защищённом хранилище Android. Эти данные не отправляются ни на наш сервер, ни куда-либо
-    ещё. Приложение не запрашивает доступ к контактам и местоположению; фото из галереи вы выбираете
+    ещё — кроме случая «Магазин с сотрудниками» (см. ниже). Приложение не запрашивает доступ к контактам и местоположению; фото из галереи вы выбираете
     сами через системное окно Android, остальные файлы телефона приложению недоступны.</p>
   </section>
 
@@ -63,6 +65,28 @@
     и знать, какой версией вы пользуетесь. Мы никому их не продаём и не передаём, кроме Google как
     поставщика серверов. Без интернета приложение работает как обычно. Удалить аккаунт и эти данные
     с сервера можно по просьбе на почту ниже.</p>
+  </section>
+
+  <section>
+    <h2>Магазин с сотрудниками (хранение данных на сервере)</h2>
+    <p>Если владелец приложения включил вашей точке режим «Сотрудники», чтобы вы и ваши сотрудники работали
+    со своих телефонов, данные магазина (товары и остатки, продажи, возвраты, приходы, расходы, клиенты и
+    поставщики с их долгами и телефонами, кассу, журнал действий, фото товаров, а также роли и пользователей
+    — имя, телефон, название пользователя и отпечаток PIN-кода) дополнительно сохраняются на сервере
+    <b>api.bozorup.com</b> (Hetzner, Финляндия, ЕС). У магазинов без этого режима на сервер ничего не уходит.</p>
+    <ul>
+      <li>Передача — только по HTTPS (шифрование TLS). Сервер доступен лишь приложению.</li>
+      <li>Телефон каждого сотрудника входит по одноразовому коду, который создаёт владелец магазина.
+      Права сотрудника (что он может смотреть, создавать, менять и удалять) проверяет сервер. Магазины друг
+      друга не видят. PIN-отпечатки других сотрудников на телефоны не отправляются.</li>
+      <li>Данные хранятся в базе на закрытом сервере, доступ — только у владельца приложения; ежедневные копии
+      хранятся 14 дней. В журналах сервера нет содержимого данных, токенов и полных адресов.</li>
+      <li>Мы не продаём и не передаём эти данные третьим лицам, не показываем рекламу и не анализируем их.
+      Сервер принадлежит владельцу приложения (хостинг-провайдер — Hetzner Online GmbH).</li>
+      <li>Если режим «Сотрудники» выключен или магазин удалён, данные на сервере удаляются по просьбе на почту
+      ниже; данные на вашем телефоне остаются. Сотрудник, выйдя из аккаунта, не сохраняет данные магазина на
+      своём телефоне.</li>
+    </ul>
   </section>
 
   <section>
@@ -134,7 +158,7 @@
     gives you a one-time sign-in code. This is visible only to the app owner, is not sold or shared, and can be
     deleted on request. The app has no ads and no analytics. The camera is used only when you tap «Scan» or
     take a product photo: barcode recognition happens on the device and only the barcode number is kept; product
-    photos are resized and stored only on your device (and in your own password-protected backup). The app may
+    photos are resized and stored only on your device (and in your own password-protected backup). <b>Exception:</b> if the app owner enables the “Staff” mode for your shop so that you and your employees can work from separate phones, the shop data (products and stock, sales, returns, purchases, expenses, customers and suppliers with their debts and phone numbers, cash, activity log, product photos, roles and staff users incl. a hashed PIN) is also stored on a protected server (api.bozorup.com, Hetzner, Finland/EU), transmitted over HTTPS only. Employees sign in on their own phones with a one-time code from the shop owner; permissions are enforced by the server; shops cannot see each other’s data. Shops without this mode send nothing to that server. The data is not sold, shared or analyzed, and can be deleted on request. The app may
     show Android notifications for messages from the owner. Receipts and debt reminders are only handed to
     WhatsApp, SMS or the system share sheet; you send them yourself. Backups are created and shared only by you,
     to a destination you choose. You can delete data inside the app or by uninstalling it. Contact: <a href="mailto:mahmudov.sorbon96@gmail.com">mahmudov.sorbon96@gmail.com</a>.</p>
